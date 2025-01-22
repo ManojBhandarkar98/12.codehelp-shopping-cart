@@ -1,6 +1,6 @@
 import { FcDeleteDatabase } from "react-icons/fc";
 
-const CartItem = ({item}) => {
+const CartItem = ({ item }) => {
   return (<div>
     <div>
       <div>
@@ -11,11 +11,11 @@ const CartItem = ({item}) => {
         <p>{item.description}</p>
         <div>
           <p>{item.price}</p>
-          <div>
-          <FcDeleteDatabase/>
+          <div> 
+            <FcDeleteDatabase />
+          </div>
         </div>
-        </div>
-       
+
       </div>
 
     </div>
