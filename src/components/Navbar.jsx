@@ -1,25 +1,28 @@
 import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const {cart} = useSelector( (state)=>state);
   return <div>
-    <div className="flex flex-row justify-between">
+    <nav className="flex justify-between items-center h-20 max-w-6xl mx-auto">
       <NavLink to="/">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGPyZMTAlzTIj_9Q7-uwiZ5xvJmBoapXPX2m2guMTa46Sl4sLalobYX9tL_p_gd61vGE0&usqp=CAU"
-                alt="img not show" 
-                className="h-20" />
+        <div className="ml-5">
+          <img src="../logo.png" className="h-14" />
+        </div>
       </NavLink>
-      <div>
+      <div className="flex items-center font-medium text-slate-100 mr-5 space-x-6">
         <NavLink to="/">
           <p>Home</p>
         </NavLink>
         <NavLink to="/cart">
-        <div>
-        <FaShoppingCart />
-        </div>
+          <div>
+            <FaShoppingCart />
+            <span>{cart.length}</span>
+          </div>
         </NavLink>
       </div>
-    </div>
+    </nav>
   </div>;
 };
 
